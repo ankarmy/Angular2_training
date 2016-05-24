@@ -5,11 +5,12 @@ import {Todo} from './todo';
     selector: 'todo-item',
     templateUrl: './app/todo/todo-item.component.html',
     styleUrls: ['./app/todo/todo-item.component.css'],
-    inputs: ['todos']
+    inputs: ['todos', 'todo']
 })
 
 export class TodoItem {
-    @Input() todo: Todo;
+    /*@Input() todo: Todo;*/
+    todo: Todo;
     todos: Todo[];
 
     toggleDone(){
@@ -17,8 +18,8 @@ export class TodoItem {
     }
 
     delete() {
-        console.log('Deleting', this.todo);
-        console.log(this.todos.indexOf(this.todo));
+        /*console.log('Deleting', this.todo);
+        console.log(this.todos.indexOf(this.todo));*/
         let index = this.todos.indexOf(this.todo);
         this.todos.splice(index, 1);
     }
